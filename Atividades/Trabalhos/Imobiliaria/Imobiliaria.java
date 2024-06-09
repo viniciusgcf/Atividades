@@ -89,7 +89,7 @@ public class Imobiliaria {
 
     public void ListaFiltrada() {
         int opcao = 0;
-        while (opcao != 5) {
+        while (opcao != 6) {
 
             System.out.println("|-------------------------------------|");
             System.out.println("|            Filtrar por:             |");
@@ -97,23 +97,46 @@ public class Imobiliaria {
             System.out.println("| 2° - Filtrar por Bairro             |");
             System.out.println("| 3° - Filtrar por Preço              |");
             System.out.println("| 4° - Filtrar por Tipo               |");
-            System.out.println("| 5° - Sair do Menu                   |");
+            System.out.println("| 5° - Filtrar por Numero de Quartos  |");
+            System.out.println("| 6° - Sair do Menu                   |");
             System.out.println("|-------------------------------------|");
             System.out.print("Digite uma opção: ");
             opcao = ler.nextInt();
             switch (opcao) {
                 case 1:
-
-
+                    System.out.println("Qual dessas cidades voce deseja: ");
+                    HashSet<String> cidadesUnicos = new HashSet<String>();
+                    for (Imovel n1 : imovel) {
+                        cidadesUnicos.add(n1.getCidade());
+                    }
+                    for (String cidades : cidadesUnicos) {
+                        System.out.println(cidades);
+                    }
+                    ler.nextLine();
+                    String leiaCidade = ler.nextLine();
+                    for (Imovel n1 : imovel) {
+                        if (leiaCidade.equals(n1.getCidade())) {
+                            System.out.println(n1);
+                        }
+                    }
                     break;
                 case 2:
                     System.out.println("Qual desses bairros você deseja: ");
-                    List<String> bairrosRepitidos = new ArrayList<>();
-                    for (Imovel n1 : imovel) {
-                        bairrosRepitidos.add(n1.getBairro());
-                    }
                     HashSet<String> bairrosUnicos = new HashSet<String>();
-
+                    for (Imovel n1 : imovel) {
+                        bairrosUnicos.add(n1.getBairro());
+                    }
+                    for (String bairros : bairrosUnicos) {
+                        System.out.println(bairros);
+                    }
+                    ler.nextLine();
+                    String leiaBairro = ler.nextLine();
+                    ler.nextLine();
+                    for (Imovel n1 : imovel) {
+                        if (leiaBairro.equals(n1.getBairro())) {
+                            System.out.println(n1);
+                        }
+                    }
                     break;
                 case 3:
                     System.out.println("Digite o preço minimo desejavel: ");
@@ -140,6 +163,15 @@ public class Imobiliaria {
                     }
                     break;
                 case 5:
+                    System.out.println("Digite o numero de quartos desejavel: ");
+                    int numQuarto = ler.nextInt();
+                    for (Imovel n1 : imovel) {
+                        if (n1.getNumeroQuartos() >= numQuarto) {
+                            System.out.println(n1);
+                        }
+                    }
+                    break;
+                case 6:
                     System.out.println("Você saiu! ");
                     break;
                 default:
@@ -185,9 +217,7 @@ public class Imobiliaria {
     public void Excluir() {
         System.out.println("Digite o codigo do imovel que voce quer excluir: ");
         int codigo = ler.nextInt();
-        for (Imovel n1 : imovel) {
-            imovel.removeIf(imoveis -> imoveis.getCodigo() == codigo);
-        }
+        imovel.removeIf(imoveis -> imoveis.getCodigo() == codigo);
     }
 
 }
