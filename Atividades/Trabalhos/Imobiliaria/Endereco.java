@@ -23,4 +23,9 @@ public class Endereco {
         this.bairro = bairro;
     }
 
+    @Override
+    public String toString() {
+        return "Endereco [cidade=" + cidade + ", bairro=" + bairro;
+    }
+
 }
