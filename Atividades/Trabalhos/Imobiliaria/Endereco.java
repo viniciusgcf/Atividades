@@ -25,7 +25,7 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return "Endereco [cidade=" + cidade + ", bairro=" + bairro;
+        return "Imovel [cidade=" + cidade + ", bairro=" + bairro;
     }
 
 }

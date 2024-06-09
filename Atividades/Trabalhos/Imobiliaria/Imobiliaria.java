@@ -1,9 +1,7 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class Imobiliaria {
-    private static final Imovel[] Imobiliaria = null;
     ArrayList<Imovel> imovel = new ArrayList<>();
     Scanner ler = new Scanner(System.in);
 
@@ -83,7 +81,7 @@ public class Imobiliaria {
 
     public void Listar() {
         for (Imovel n1 : imovel) {
-            System.out.print(n1);
+            System.out.println(n1);
         }
     }
 
