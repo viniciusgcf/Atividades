@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Scanner;
 
 public class Imobiliaria {
@@ -102,9 +104,16 @@ public class Imobiliaria {
             switch (opcao) {
                 case 1:
 
+
                     break;
                 case 2:
-                    Listar();
+                    System.out.println("Qual desses bairros você deseja: ");
+                    List<String> bairrosRepitidos = new ArrayList<>();
+                    for (Imovel n1 : imovel) {
+                        bairrosRepitidos.add(n1.getBairro());
+                    }
+                    HashSet<String> bairrosUnicos = new HashSet<String>();
+
                     break;
                 case 3:
                     System.out.println("Digite o preço minimo desejavel: ");
