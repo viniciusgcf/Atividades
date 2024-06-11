@@ -15,7 +15,7 @@ public class Imobiliaria {
             System.out.println("| 2° - Listar o Imovel Cadastrado     |");
             System.out.println("| 3° - Lista Filtrada                 |");
             System.out.println("| 4° - Editar o Imovel                |");
-            System.out.println("| 5° - Excluir o Imovel              |");
+            System.out.println("| 5° - Excluir o Imovel               |");
             System.out.println("| 6° - Sair do Menu                   |");
             System.out.println("|-------------------------------------|");
             System.out.print("Digite uma opção: ");
